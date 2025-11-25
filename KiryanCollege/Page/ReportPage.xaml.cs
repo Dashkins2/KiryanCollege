@@ -13,16 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KiryanCollege.Page
+namespace SulejmanovaCollege1.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ReportPage.xaml
+    /// Логика взаимодействия для Report1Pages.xaml
     /// </summary>
-    public partial class ReportPage : System.Windows.Controls.Page
+    public partial class Report1Pages : Page
     {
-        public ReportPage()
+        public Report1Pages()
         {
             InitializeComponent();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            GroupCmb.SelectedValuePath = "Id";
+            GroupCmb.DisplayMemberPath = "Name";
+            GroupCmb.ItemsSource = App.context.Group.ToList();
+        }
+
     }
 }

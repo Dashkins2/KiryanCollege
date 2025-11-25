@@ -1,14 +1,43 @@
-﻿<Page x:Class="KiryanCollege.Page.ReportPage2"
+﻿<Page x:Class="SulejmanovaCollege1.Pages.Report2Pages"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:KiryanCollege.Page"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="ReportPage2">
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:SulejmanovaCollege1.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="Окно отчёта2" Background="White">
 
-    <Grid>
-        
-    </Grid>
+	<Grid Margin="10">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="45"/>
+			<ColumnDefinition Width="325"/>
+
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="60"/>
+			<RowDefinition />
+			<RowDefinition Height="160" />
+			<RowDefinition />
+			<RowDefinition Height="50"/>
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<TextBlock Text="Выберите начало периода:" HorizontalAlignment="Center" FontSize="16"
+                   VerticalAlignment="Center"/>
+		<TextBlock Text="Выберите периода периода:" Grid.Column="2" HorizontalAlignment="Center" FontSize="16"
+                   VerticalAlignment="Center"/>
+		<DatePicker Name="DateStartDp" Grid.Row="1" Margin="5" Width="200" />
+		<DatePicker Name="DateFinishDp" Grid.Row="1" Grid.Column="2" Width="200" Margin="5"/>
+		<Grid Grid.Row="3" Grid.Column="3">
+			<DataGrid Name="ReportDg" >
+				<DataGrid.Columns>
+
+				</DataGrid.Columns>
+			</DataGrid>
+		</Grid>
+		<Button Name="UpdateReportBtn" Content="Сформировать отчёт" Grid.Row="5"
+				Grid.Column="2" Margin="20 5 20 5" Click="UpdateReportBtn_Click"/>
+	</Grid>
 </Page>
